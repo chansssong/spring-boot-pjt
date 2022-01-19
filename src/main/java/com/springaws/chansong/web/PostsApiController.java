@@ -3,6 +3,7 @@ package com.springaws.chansong.web;
 import com.springaws.chansong.domain.posts.PostsService;
 import com.springaws.chansong.web.dto.PostsResponseDto;
 import com.springaws.chansong.web.dto.PostsSaveRequestDto;
+import com.springaws.chansong.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,5 +23,15 @@ public class PostsApiController {
         return postsService.findById(id);
     }
 
+    @PutMapping("/api/v1/posts/{id}")
+    public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto){
+        return postsService.update(id, requestDto);
+    }
+
+    @DeleteMapping("/api/v1/posts/{id}")
+    public Long delete(@PathVariable Long id){
+        postsService.delete(id);
+        return id;
+    }
 
 }
