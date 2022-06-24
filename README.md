@@ -7,7 +7,8 @@
 - h2
 - JPA
 - AWS(EC2, RDS, S3)
-- 
+
+
 ### 구현 기능
 - 게시판 CRUD
 - Spring security
